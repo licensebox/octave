@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 sudo apt-get update
-sudo apt-get install -y octave liboctave-dev
+sudo apt-get install -y octave octave-dev
