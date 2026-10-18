@@ -1,6 +1,6 @@
 {
   "repository": "licensebox/protocol",
-  "ref": "8284a5d3fb177ccd5a20c56d30a5ffe6cd93d99c",
+  "ref": "a81335c11f5a916ce5dc5e35e5b5b87b7af03e46",
   "protocol": 2,
   "revision": 7,
   "reference_go": "v0.6.1",
