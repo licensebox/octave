@@ -1,5 +1,8 @@
 function adapter()
   raw=fileread('/dev/stdin');r=jsondecode(raw);
+  % Preserve NUL bytes lost by Octave 8's JSON string conversion. This is
+  % test framing only; deriveBinding still exercises the real MEX boundary.
+  if strcmp(r.op,'derive')&&isfield(r,'raw_id_octets'),r.raw_id=char(uint8(r.raw_id_octets(:)'));end
   original=regexp(raw,'"keys"\s*:\s*(\{[^}]*\})','tokens','once');if ~isempty(original),r.keys=original{1};end
   try
     v=run(r);if any(strcmp(r.op,{'modules','requests'}))&&isstruct(v),v=num2cell(v);end;a=struct();a.ok=true;a.value=v;
