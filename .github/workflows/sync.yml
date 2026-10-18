@@ -23,7 +23,7 @@ jobs:
   test:
     needs: discover
     if: needs.discover.outputs.changed == 'true'
-    uses: licensebox/protocol/.github/workflows/sdk.yml@a81335c11f5a916ce5dc5e35e5b5b87b7af03e46
+    uses: licensebox/protocol/.github/workflows/sdk.yml@1bfdfb756c07323a74fa5b5a68c447a1fdb17be0
     with:
       language: octave
       protocol_ref: ${{ needs.discover.outputs.ref }}
